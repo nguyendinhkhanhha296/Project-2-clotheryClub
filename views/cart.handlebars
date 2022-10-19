@@ -1,3 +1,4 @@
+
 <table class="checkout">
     <tr>
         <td> title </td>
@@ -6,7 +7,7 @@
     </tr>
 {{#each checkoutitem}}
 <tr>
-        <td> {{title}} </td>
+        <td> {{name}} </td>
         <td>  {{price}} </td>
         <td>  {{quantity}} </td>
 </tr>
@@ -29,9 +30,9 @@ Total Price is {{total_price}} <br>
 {{#each cartitems}}
     <tr>
     <tr>
-    <td> {{title}} </td>
+    <td> {{name}} </td>
     <td>  {{price}} </td>
-    <td> <input type="text" name="{{title}}" value="{{quantity}}" onkeyup="checkoutdis()"> </td>
+    <td> <input type="text" name="{{name}}" value="{{quantity}}" onkeyup="checkoutdis()"> </td>
     </tr>
 {{/each}}
     </table>

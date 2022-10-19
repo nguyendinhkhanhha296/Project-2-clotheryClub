@@ -23,6 +23,23 @@ router.get('/product/:id', async (req, res) => {
   }
 });
 
+router.get('/cart', async(req, res) => {
+  
+  try {
+    const productData = await Product.findByPk(req.params.id, {
+      attributes: ['id', 'name', 'type', 'category', 'price', 'photo_url']
+    });
+
+    const product = productData.get({
+      plain: true
+    });
+
+    res.render('cart', { product });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/type/men', async(req, res) => {
   try {
     const productData = await Product.findAll( {
